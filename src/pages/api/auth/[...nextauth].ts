@@ -32,6 +32,7 @@ export const authOptions = {
               )
             ),
             q.Create(q.Collection("users"), { data: { email } }),
+            //ELSE
             q.Get(q.Match(q.Index("user_by_email"), q.Casefold(user.email)))
           )
         );
